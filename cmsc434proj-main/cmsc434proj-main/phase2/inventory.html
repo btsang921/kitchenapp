@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/25e0395ca2.js" crossorigin="anonymous"></script>
+    <script src ="js.js">
+    </script>
+    <!--feel free to change icons by browsing fontawesome above^^-->
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css.css">
+    <title>Inventory</title>
+</head>
+
+<div class="logotop">
+  <a href="index.html" > <img src="logos/kk_full_blue.png" alt="KitchenKompanion"></a>
+</div>
+<body class = "active" onload="main()">
+<div class="wrapper">
+<!--    tabs!!-->
+    <div class="tab">
+        <button class="tablinks" > <a class="tabcolors" href="index.html"> Home </a></button>
+        <button class="tablinks" > <a class="tabcolors" href="recipes.html" > Recipe Find </a></button>
+        <button class="tablinks" > <a class="tabcolors" href="shoppingList.html" > Shopping List </a></button>
+        <button class="tablinks" > <a class="tabcolors" href="inventory.html" > Inventory </a></button>
+    </div>
+    <div class="section">
+        <div class="top_navbar">
+            <div class="title">
+                Inventory
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- inventory stuff -->
+<!-- referenced from https://www.w3schools.com/howto/howto_js_todolist.asp -->
+
+<div class = "hide">
+  <div class = "empty-list" id = "empty-list">
+    Your Inventory is Empty, click the Add Item button to add an item to your inventory. Click on an item after adding to check its information!
+  </div>
+ </div>
+
+
+
+
+<div class= "hide" id="addItem">
+  <table> 
+  <tr> 
+    <td> 
+      <label for="food-input">Item Name: </label>
+    </td>
+    <td> 
+      <input type="text" id="food-input" placeholder="Enter Item Name" onClick="displayKeyboard();" onblur="removeKeyboard();">
+    </td>
+  </tr>
+
+  <tr> 
+    <td>
+      <label> Purchased: </label>
+    </td>
+    <td>
+    <label>
+      <span id='purchased-date'></span>
+      <script> 
+        var n =  new Date();
+        var y = n.getFullYear();
+        var m = n.getMonth() + 1;
+        var d = n.getDate();
+        document.getElementById("purchased-date").innerHTML = y + "-" + m + "-" + d;
+        </script>
+    </label>
+    </td>
+  </tr>
+
+  <tr> 
+      <td> 
+        <label for="quantity">Quantity: </label>
+      </td>
+      <td> 
+        <input type="number" id="quantity" placeholder="Quantity" onClick="displayKeyboard();" onblur="removeKeyboard();">
+      </td>
+    </tr>
+
+    <td> 
+      <label for="expiration">Best By:</label>
+    </td>
+    <td> 
+      <input type="date" id="expir-date" name="expir-date" onClick="displayKeyboard();" onblur="removeKeyboard();">
+    </td>
+  </tr>
+
+  <tr> 
+    <td> <button onclick="closeAdd()" class="closeBtn">Close </button></td>
+    <td> <button onclick="newItemInfo()" class="finishBtn">Add </button></td>
+  </tr>
+  </table>
+</div>
+
+
+<img  src="keyboard.jpeg" class="keyboards" id="keyboard">
+
+
+
+<ol id="foodItems">
+  <li>Loaf of bread</li>
+</ol>
+
+
+<div class = "stay">
+  <div class="center">
+      <button onclick="addItem()" id="addBtn">Add Item</span>
+  </div>
+</div>
+
+
+        <div class= "hide" id="itemInfo"> 
+        <table> 
+          <tr>
+            <td> <label for="food-input">Item Name: </label></td>
+            <td> <span id='item-name'> </span> </td> 
+          </tr> 
+          <tr>
+            <td> <label for="food-input">Purchased: </label></td>
+            <td> <span id='purchased-date2'> </span> </td> 
+          </tr> 
+          <tr>
+            <td> <label for="food-input">Quantity: </label></td>
+            <td><span id='amount'> </span>
+            </td> 
+          </tr> 
+          <tr>
+            <td> <label for="food-input">Best By: </label></td>
+            <td><span id='expiration'> </span> </td> 
+          </tr> 
+          <tr> 
+            <td padding = "50px"> <button onClick="location.href = 'comingsoon.html';">Edit</button></td>
+            <td padding = "50px"> <button onClick="location.href = 'comingsoon.html';">Notes</button></td>
+            <td padding = "50px"> <button onclick="closeInfo()" class="closeBtn">Close</button> </td>
+          </tr>
+        </table>
+        </div>
+
+        <div class = "hide" id="missingAlert">
+          <table>
+            <tr>
+              <td>
+                You must have a food name and quantity!
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button onClick="closeAlert()" class = "closeBtn"> Close</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+
+<!-- FUNCTIONS  -->
+<script type="text/javascript">
+
+
+
+
+
+function closeAlert(){
+  var x = document.getElementById("missingAlert");
+  x.style.display = "none";
+
+  var y = document.getElementById("addItem");
+  y.style.display = "block";
+}
+
+function closeInfo(){
+          var x = document.getElementById("itemInfo");
+          x.style.display = "none";
+
+          var y = document.getElementById("addBtn");
+          y.style.display = "block";
+        }
+
+
+
+        var list = document.querySelector('ol');
+        list.addEventListener('click', function(ev) {
+        if (ev.target.tagName == 'LI') {
+          var x = document.getElementById("addBtn");
+          x.style.display = "none";
+
+
+
+          var itemName = ev.target.innerHTML;
+          itemName = itemName.split("<")[0];
+          var Info = foodItems.get(itemName);
+          document.getElementById('item-name').innerText = itemName;
+          document.getElementById('purchased-date2').innerText = Info[0];
+          document.getElementById('amount').innerText = Info[1];
+          document.getElementById('expiration').innerText = Info[2];
+          
+          document.getElementById('itemInfo').style.display="block";
+        }
+        }, false);
+
+
+  function hideAdd() {
+      var x = document.getElementById("addBtn");
+      var y = document.getElementById("foodItems");
+      if (x.style.display != "none" || y.style.display != "none") {
+          x.style.display = "none";
+          y.style.display = "none";
+      } else {
+          x.style.display = "block";
+          y.style.display = "block";
+      }
+  }
+
+
+
+  const foodItems = new Map();
+  var breadItems = ["2022-03-28","1","2022-04-05"];
+  foodItems.set("Loaf of bread", breadItems);
+    // Create a "close" button and append it to each list item
+    var myNodelist = document.getElementById("foodItems").getElementsByTagName("li");
+    var i;
+    for (i = 0; i < myNodelist.length; i++) {
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      myNodelist[i].appendChild(span);
+   }
+
+   var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var x = document.getElementById("itemInfo");
+            x.style.display = "none";
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+
+
+
+function addItem(){
+    var x = document.getElementById("addItem");
+    if (x.style.display !== "block") {
+      x.style.display = "block";
+      var hide = document.getElementById("foodItems");
+      hide.style.display = "none";
+      hide = document.getElementById("empty-list");
+      hide.style.display = "none";
+      var y = document.getElementById('addBtn');
+      y.style.display = "none";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+
+
+
+
+  function closeAdd(){
+    document.getElementById('addBtn').style.display='block';
+    document.getElementById("addItem").style.display = 'none';
+    var hide = document.getElementById("foodItems");
+    hide.style.display = "block";
+  }
+
+
+
+
+
+  function newItemInfo() {
+    var x = document.getElementById("addItem");
+    x.style.display = "none";
+    var li = document.createElement("li");
+    var itemLookup = document.getElementById("food-input").value;
+    var quantity = document.getElementById("quantity").value;
+    var purDate = document.getElementById("purchased-date").innerText;
+    var expirDate = document.getElementById("expir-date").value;
+    var currInfo = [purDate, quantity, expirDate];
+
+
+    /* put info from added info into a map so that users can view it later */
+    foodItems.set(itemLookup, currInfo); 
+    var t = document.createTextNode(itemLookup);
+    li.appendChild(t);
+    if (itemLookup == "" || quantity == "") {
+    var alert = document.getElementById("missingAlert");
+    alert.style.display="block";
+    x.style.display = "none";
+    document.getElementById("food-input").value = "";
+    document.getElementById("quantity").value = "";
+    document.getElementById("expir-date").value = "";
+    } else {
+      var hide = document.getElementById("foodItems");
+      hide.style.display = "block";
+      document.getElementById("foodItems").appendChild(li);
+      document.getElementById('addBtn').style.display="block";
+      document.getElementById("food-input").value = "";
+      document.getElementById("quantity").value = "";
+      document.getElementById("expir-date").value = "";
+    }
+
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+  }
+
+function displayKeyboard(){
+    var keys = document.getElementById("keyboard");
+    keys.style.display = "block";
+}
+
+function removeKeyboard(){
+   var keys = document.getElementById("keyboard");
+   keys.style.display = "none";
+
+}
+
+</script>
+</head>
+</html>

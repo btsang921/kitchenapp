@@ -1,0 +1,78 @@
+[
+    {
+        "name": "Cereal",
+        "info": [
+            " easy ",
+            "| nut-free ",
+            "| gluten-free ",
+            "| vegetarian ",
+            "| vegan |"
+        ],
+        "ingredients": [
+            {
+                "quantity": "1 cup",
+                "name": "Cereal"
+            },
+            {
+                "quantity": "2 cups ",
+                "name": "Milk"
+            }
+        ],
+        "steps": [
+            "Put cereal of choosing into bowl",
+            "Pour milk in and enjoy"
+        ],
+        "imageURL": "recipeImages/cereal.jpeg"
+    },
+    {
+        "name": "Banana Bread",
+        "info": [
+            "easy",
+            " | vegetarian | ",
+            "vegan"
+        ],
+        "ingredients": [
+            {
+                "quantity": "2",
+                "name": "Bananas"
+            },
+            {
+                "quantity": "1/3 cup",
+                "name": "butter"
+            },
+            {
+                "quantity": "1/2 teaspoon",
+                "name": "Baking Soda"
+            },
+            {
+                "quantity": "3/4 cup",
+                "name": "Sugar"
+            },
+            {
+                "quantity": "1 pinch",
+                "name": "Salt"
+            },
+            {
+                "quantity": "1",
+                "name": "Egg"
+            },
+            {
+                "quantity": "1 teaspoon",
+                "name": "Vanilla Extract"
+            },
+            {
+                "quantity": "1 1/2 cups",
+                "name": "All purpose flour"
+            }
+        ],
+        "steps": [
+            "Preheat oven to 350 degrees",
+            "Butter a loaf pan",
+            "In a mixing bowl, mash bananas with a fork until smooth",
+            "Stir butter into mashed bananas",
+            "Mix dry ingredients together and then stir in wet ingredients",
+            "Pour batter into pan and bake for 50 minutes. Let cool before serving"
+        ],
+        "imageURL": "recipeImages/bananabread.webp"
+    }
+]

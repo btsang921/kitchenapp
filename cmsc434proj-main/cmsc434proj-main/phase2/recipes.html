@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/25e0395ca2.js" crossorigin="anonymous"></script>
+    <script src ="js.js">
+    </script>
+    <!--feel free to change icons by browsing fontawesome above^^-->
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css.css">
+    <title>Find a Suggested Recipe!</title>
+</head>
+
+<div class="logotop">
+    <a href="index.html" > <img src="logos/kk_full_blue.png" alt="KitchenKompanion"></a>
+</div>
+
+<body class = "active">
+<div class="wrapper">
+<!--    tabs!!-->
+    <div class="tab">
+        <button class="tablinks" > <a class="tabcolors" href="index.html"> Home </a></button>
+        <button class="tablinks" > <a class="tabcolors" href="recipes.html" > Recipe Find </a></button>
+        <button class="tablinks" > <a class="tabcolors" href="shoppingList.html" > Shopping List </a></button>
+        <button class="tablinks" > <a class="tabcolors" href="inventory.html" > Inventory </a></button>
+    </div>
+    <div class="section">
+        <div class="top_navbar">
+            <div class="title">
+                Find a Suggested Recipe!
+            </div>
+        </div>
+    </div>
+</div>
+<div class="alert" style="display: none;" id="savedAlert">
+    <span class="closebtn"  onclick="this.parentElement.style.display='none';">&times;</span>
+    Added ingredients to shopping list!
+</div>
+<div class="alert" style="display: none;" id="pinnedAlert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    Saved recipe!
+</div>
+<!--<input type="text" name="searching" id="search" placeholder="Search Recipe" style="margin-bottom: 3px; margin-left: 50px;" size = "17" onClick="displayKeyboard();" onblur="removeKeyboard();"/>-->
+<br id="br">
+<center>
+    <p id="searchBar">Search for a recipe below: </p>
+    <input type="text" name="searching" id="search" placeholder="Search Recipe" style="margin-bottom: 3px; margin-left: 50px;" size = "17" onClick="displayKeyboard();" onblur="removeKeyboard();"/>
+    <button id="findButton" onClick="location.href = 'comingsoon.html';">Find Recipe!</button>
+</center>
+
+<br id="br1">
+<center>
+    <p id="skip">Suggest a random recipe: </p>
+    <button id="surpriseButton" onclick=" processRecipeData();">Surprise Me!</button>
+</center>
+<br id="br2">
+
+<div class="levelSelection" style="line-height: 1.5; text-align:center;">
+    <p id="suggested">Or fill out the form to find a suggested recipe: </p>
+    <h6 id="levelQuestion">Whats your level of cooking? </h6>
+    <!--        create js function to show recipe based on level-->
+    <center>
+        <select  class = "select"  name="levels" id="levelSelection" style="width:300px; text-align:center; appearance: none; background: url(dropdownarrow.png) white no-repeat 96%;">
+            <option value="easy" selected="true">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    </center>
+</div>
+<div class="allergenForm" style="line-height: 1.5;text-align:center;">
+    <center>
+        <form id="allergyForm">
+        <legend><h6>Any food restrictions?</h6></legend>
+
+            <div>
+                <select id="preference" multiple required size=5 style="width:300px; text-align:center;">
+                    <option value="Nuts">Nuts</option>
+                    <option value="GlutenFree">Gluten Free</option>
+                    <option value="Vegetarian">Vegetarian </option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="None">None</option>
+                </select>
+                <!--radio buttons or select?? -->
+            </div>
+
+        </form>
+        <div class="mealSelection" style="line-height: 1.5; text-align:center;">
+            <h6 id="mealQuestion">What meal? </h6>
+            <!--        create js function to show recipe based on level-->
+            <center>
+                <select  class = "select"  name="levels" id="mealSelection"  style="width:300px; text-align:center; appearance: none; background: url(dropdownarrow.png) white no-repeat 96%;">
+                    <option value="easy" selected="true">Breakfast</option>
+                    <option value="medium">Lunch</option>
+                    <option value="hard">Dinner</option>
+                </select>
+            </center>
+        </div>
+
+        <form id="foodForm">
+            <legend><h6>What types of food?</h6></legend>
+
+            <div>
+                <select id="types" multiple required size=5 style="width:300px; text-align:center;">
+                    <option value="Nuts">Vegetables</option>
+                    <option value="GlutenFree">Meat</option>
+                    <option value="Vegetarian">Seafood </option>
+                    <option value="Vegan">Grains</option>
+                    <option value="None">Surprise me!</option>
+                </select>
+                <!--radio buttons or select?? -->
+            </div>
+
+        </form>
+
+        <div class="mealSelection" style="line-height: 1.5; text-align:center;">
+            <h6 id="cuisineQuestion">What cuisine? </h6>
+            <!--        create js function to show recipe based on level-->
+            <center>
+                <select  class = "select"  name="cuisine" id="cuisineSelection" style="width:300px; text-align:center; appearance: none; background: url(dropdownarrow.png) white no-repeat 96%;">
+                    <option value="easy" selected="true">Asian</option>
+                    <option value="medium">French</option>
+                    <option value="hard1">Mexican</option>
+                    <option value="hard2">Mediterranean</option>
+                    <option value="hard3">Surprise me!</option>
+                </select>
+            </center>
+        </div>
+
+        <button id="processRecipeButton" onclick=" processRecipeData();">Give Me a Recipe!</button>
+    </center>
+</div>
+<div id="recipe">
+
+</div>
+<!--    show recipe button?-->
+   <div id="recipeName">
+<!--        recipe name/title goes here-->
+   </div>
+
+
+   <div id="recipeInfo">
+<!--        recipe info goes here (allergen information, time, level, etc)-->
+   </div>
+<br>
+   <div id="recipeImage">
+<!--        image for recipe goes here-->
+   </div>
+<br>
+<div id="ingredients" style="line-height: 1.5;">
+    <!--       Ingredients:-->
+    <ol id = "ingredientsList"></ol>
+    <!--        List of ingredients go here-->
+    <!--        add options to add to shopping list as well-->
+</div>
+<div id="Instructions" style="line-height: 1.5;">
+    <!--       Instructions:-->
+    <ol id = "instructionsList"></ol>
+    <!--        list of instructions go here-->
+</div>
+
+</body>
+</html>

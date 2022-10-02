@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/25e0395ca2.js" crossorigin="anonymous"></script>
+    <script src ="js.js">
+    </script>
+    <!--feel free to change icons by browsing fontawesome above^^-->
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css.css">
+    <title>Shopping List Page</title>
+    </head>
+
+    <div class="logotop">
+        <a href="index.html" ><img src="logos/kk_full_blue.png" alt="KitchenKompanion"></a>
+    </div>
+
+    <body class = "active" onload="main()">
+        <div class="wrapper">
+            
+            <div class="tab">
+                <button class="tablinks" > <a class="tabcolors" href="index.html"> Home </a></button>
+                <button class="tablinks" > <a class="tabcolors" href="recipes.html" > Recipe Find </a></button>
+                <button class="tablinks" > <a class="tabcolors" href="shoppingList.html" > Shopping List </a></button>
+                <button class="tablinks" > <a class="tabcolors" href="inventory.html" > Inventory </a></button>
+            </div>
+
+            <div class="section">
+                <div class="top_navbar">
+
+                    <!--Put title of page here!-->
+                    <div class="title">
+                        Shopping List
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="padded-page">
+        
+<!--        <div class="levelSelection">-->
+<!--            &lt;!&ndash;        create js function to show recipe based on level&ndash;&gt;-->
+<!--            &lt;!&ndash; <select onclick="showRecipe();" class = "select" onchange="showRecipe();" name="levels" id="levelSelection">-->
+<!--                <option value="easy" selected="true">Easy</option>-->
+<!--                <option value="medium">Medium</option>-->
+<!--                <option value="hard">Hard</option>-->
+<!--            </select> &ndash;&gt;-->
+
+
+
+<!--            &lt;!&ndash; <button type="button" onclick=test()>Add New</button> &ndash;&gt;-->
+<!--        </div>-->
+
+            <div class="alert" style="display: none; font-size:35px;" id="storeAlert">
+                <span class="closebtn"  onclick="this.parentElement.style.display='none';">&times;</span>
+                Added checked items to inventory!
+            </div>
+        <div class="addingitem">
+                
+
+                <p id="newItemLabel">Add a New Item:</p>
+        <form id="adding">
+            <input type="text" name="itemName" id="itemName" placeholder=" Item Name" style="margin-bottom: 3px;" size = "17" onClick="displayKeyboard();" onblur="removeKeyboard();"/>
+            
+            <select id = "storeSelection" onchange="storeAdding()" style="appearance: none; background: url(dropdownarrow.png) white no-repeat 96%;">
+                <option value="Trader Joe's">Trader Joe's</option>
+                <option value="Whole Foods">Whole Foods</option>
+                <option value="+ Add Store">+ Add Store</option>
+            </select> 
+
+            <input type="number" name="itemAmount" id="itemAmount" placeholder=" Quantity"  maxlength="2" onClick="displayKeyboard();" onblur="removeKeyboard();"/>
+            <input type="number" name="itemAmount" id="itemAmount" placeholder=" Unit"  maxlength="2" onClick="displayKeyboard();" onblur="removeKeyboard();"/>
+
+            <input type="button" value="Add" id="addButton" onClick="addToList()" name="add" style= "background-color: #457B9D; color: #f1faee; border-radius: 8px; border: none; margin: 4px 2px; display: inline-block; padding: 10px;"/>
+        </form> <br>
+
+       
+        Trader Joe's
+                <div id="TraderJoesList"  style="line-height: 1.5;">
+                    
+                    
+                        <input type="checkbox" name="food" value="Apple"> <label for="food" class="strikethrough"> 1 Carton of Milk</label><br>
+                        <input type="checkbox" name="food" value="Orange"><label for="food" class="strikethrough"> 3 ounces of Orange</label><br>
+                        <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough"> 5 Jars of Pasta Sauce</label><br>
+                        <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough"> 2 Cans of Black Beans</label><br>
+                        <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough"> 1 Case of Sparkling Water</label><br>
+                        <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough"> 2 Packs of Cheddar Cheese</label><br>
+
+                </div><br>
+
+       Whole Foods
+                <div id="WholeFoodsList" style="line-height: 1.5;">
+                        <input type="checkbox" name="food" value="Apple"><label for="food" class="strikethrough"> 1 Pack of Sourdough Bread</label><br>
+                        <input type="checkbox" name="food" value="Orange"> <label for="food" class="strikethrough"> 1 Carton of Eggs</label><br>
+                        <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough"> 2 Cartons of Almond Milk</label><br>
+                        <input type="checkbox" name="food" value="Banana"> <label for="food" class="strikethrough"> 3 Ounce of Apples</label><br>
+                </div>
+            
+            <div>
+            <br><button onClick="location.href = 'comingsoon.html';" style= "background-color: #457B9D; color: #f1faee; border-radius: 8px; border: none; margin: 4px 2px; display: inline-block; padding: 10px;">Edit Items</button>
+                <button class = "button1" onClick="listAlert();" style="position: relative; left: 260px; background-color: #457B9D; color: #f1faee; border-radius: 8px; border: none; margin: 4px 2px; display: inline-block; padding: 10px;"> Add to Inventory</button>
+            </div>
+            <img  src="keyboard.jpeg" class="keyboards" id="keyboard">
+
+
+             
+    </body>
+</html>

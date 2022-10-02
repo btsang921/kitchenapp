@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css.css">
+<meta charset="UTF-8">
+<script src="https://kit.fontawesome.com/25e0395ca2.js" crossorigin="anonymous"></script>
+<script src ="js.js">
+</script>
+</head>
+
+<body class = "active" onload="main()">
+<!-- Start of Page Container -->
+<div class="page-container">
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <a href="inventory.html">1 or more of your ingredients in your inventory are expiring soon! 
+          Click here to see which ones.</a>
+    </div>
+    <div class="logo">
+      <img src="logos/kk_full_white.png" alt="KitchenKompanion">
+      </div>
+    <br></br>
+  <!-- Start of Profile Container -->
+  <div class="profile-container">
+    <h6><b>My Profile</b></h6>
+    <!-- Profile Pic -->
+      <div class="user one"></div>
+      <h5><b>Angelica Day</b></h5>
+        <li>Dietary Restriction(s): Nut Allergy</li>
+        <li>Favorite Recipe: Cereal and Milk</li>
+      <!-- Profile Tabs -->
+      <div class="tab">
+      <button class="tabprofilelinks" > 
+        <a href="pinned.html" > 
+          <span class="icon"><i class="fa-solid fa-thumbtack"></i></span>
+          <span class="item">Pinned Recipe</span>
+        </a></button>
+      <button class="tabprofilelinks" > 
+        <a href="comingsoon.html" > 
+          <span class="icon"><i class="fa-solid fa-pencil"></i></span>
+          <span class="item">Edit Profile</span>
+        </a></button>
+      </div>
+    <!-- End of Profile Container -->
+    </div>   
+
+    <div class="menu-container">
+    <div class="button-container">
+        <div class="action-container">
+            <a href="recipes.html" class="button">
+                <span class="icon"><i class="fa-solid fa-book"></i></span>
+                <span class="item"> Find a Suggested Recipe</span>
+        </a>
+        </div>
+        <div class="action-container">
+            <a href="shoppinglist.html" class="button">
+                <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                <span class="item"> My Shopping List</span>
+        </a>
+        </div>
+        <div class="action-container">
+            <a href="inventory.html" class="button">
+                <span class="icon"><i class="fa-solid fa-jar"></i></span>
+                <span class="item">My Inventory</span>
+        </a>
+        </div>
+        <div class="action-container">
+            <a href="comingsoon.html" class="button">
+                <span class="icon"><i class="fa-solid fa-circle-question"></i></span>
+                <span class="item">How To Use Our App</span>
+        </a>
+        </div>
+ 
+    </div>
+</div>
+
+<!-- End of Page Container -->
+</div>
+
+</body>
+</html>

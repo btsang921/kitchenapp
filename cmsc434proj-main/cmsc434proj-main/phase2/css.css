@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500&display=swap');
+   *{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    margin: auto;
+    }
+
+    body{
+        background: #f1faee;
+        font-size: 6vw;
+    }
+
+    input, select, textarea, button{
+        font-size: 5vw;
+    }
+
+    h1{
+
+        text-align:center;
+    }
+    h6{
+
+         text-align:center;
+    }
+
+    img{
+        border-radius: 10%;
+        display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
+    }
+
+
+    input[type=checkbox]{
+      transform: scale(5);
+      display: inline;
+      margin-left:100px;
+      margin-right:50px;
+
+
+    }
+
+    .checkboxtext{
+        margin-left: 3em;
+        display: block;
+        position: relative;
+        margin-top: -1.4em;
+
+    }
+
+    .wrapper .sidebar{
+        background: #457B9D;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 225px;
+        height: 100%;
+        padding: 20px 0;
+        transition: all 0.5s ease;
+    }
+
+    .wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #457B9D;
+    color: #f1faee;
+    font-size: 16px;
+    position: relative;
+    }
+
+    .wrapper .sidebar ul li a .icon{
+        color: #f1faee;
+        width: 30px;
+        display: inline-block;
+    }
+    .wrapper .sidebar ul li a:hover,
+    .wrapper .sidebar ul li a.active{
+        color: #f1faee;
+
+        background: #457B9D;
+        border-right: 2px solid #457B9D;
+    }
+
+    .wrapper .sidebar ul li a:hover .icon,
+    .wrapper .sidebar ul li a.active .icon{
+        color: #f1faee;
+    }
+
+    .wrapper .sidebar ul li a:hover:before,
+    .wrapper .sidebar ul li a.active:before{
+        display: block;
+    }
+
+    .wrapper .section{
+        width: calc(100% - 225px);
+        margin-left: 225px;
+        transition: all 0.5s ease;
+    }
+
+    .wrapper .section .top_navbar{
+        background: #457B9D;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+    }
+
+    .wrapper .section .top_navbar .menuButton a{
+        font-size: 28px;
+        color: #f1faee;
+    }
+
+    .wrapper .section .top_navbar .menuButton {
+        color: #457B9D;
+    }
+
+    body.active .wrapper .sidebar{
+        left: -225px;
+    }
+
+    body.active .wrapper .section{
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .logo{
+      padding-top: 20px;
+      width:90%;
+      height:10px;
+      
+    }
+    .logotop{
+      padding-top: 20px;
+      width:80%;
+      height:140px;
+    }
+
+    .page-container{
+        background-color:#457B9D;
+        background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+        height: 650px;
+    }
+
+    .bg {
+      background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+    }
+
+    .profile-container{
+        width:85%;
+        display: block;
+        text-align: center;
+        float:center;
+        padding-top: 5px;
+        box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+        background-color: #f1faee;
+        font-size: 14px;
+    }
+
+    .user{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border-style: solid;
+        border-color: #f1faee;
+        box-shadow: 0 0 8px 3px #B8B8B8;
+      
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .one {
+        background-image: url('https://picsum.photos/id/1011/200/300');
+      }
+      
+      .two {
+        background-image: url('https://via.placeholder.com/200x200');
+      }
+      
+      .three {
+        background-image: url('https://via.placeholder.com/200x400');
+      }
+
+
+    ul {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        padding-left: 20px;
+      }
+
+     
+    .alert {
+        padding: 15px;
+        background-color: #e63946;
+        color: white;
+        margin-bottom: 5px;
+        font-size: 15px;
+    }
+    
+
+    .menu-container{
+        width:100%;
+        height: 170px;
+        border: none;
+        padding-top: 10px;
+    }
+
+    .button {
+        color: black;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+        line-height: 14px;
+
+        
+      }
+
+    .button:hover {
+        background-color: #A8DADC;
+      }
+
+    .button-container {
+        overflow-y: auto;
+    }
+    
+    .button-container > a {
+        position: relative;
+        height: 100px; 
+        margin: 15px;
+        display: inline-block;
+    }
+
+  
+
+    .action-container {
+        float: auto;
+        margin-bottom: 5px;
+        width:80%;
+        background:#f1faee;  
+        box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    }
+
+    .padded-page {
+      padding: 25px;
+    }
+
+    
+
+    .title{
+         margin: auto;
+         color: #f1faee;
+    }
+
+    input[type='number']{
+        width: 220px;
+    } 
+
+
+    input[type=checkbox]:checked + label.strikethrough{
+        text-decoration: line-through;
+    }
+
+    input[type=checkbox]:checked + span.strikethrough{
+            text-decoration: line-through;
+    }
+
+  .tab {
+    overflow: hidden;
+    border: 1px solid lightgray;
+    background-color: #f1faee;
+    font-size: 4vw;
+  }
+  .tab button {
+    background-color: #f1faee;
+    float: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    position: static;
+    font-size: 4vw;
+
+  }
+  .tab button:hover {
+    background-color: #A8DADC;
+    font-size: 4vw;
+  }
+  .tab button.active {
+    background-color: lightgray;
+    font-size: 4vw;
+  }
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 4vw;
+  }
+
+  .tablinks {
+    font-size: 4vw;
+    color: #f1faee;
+
+  }
+
+  #recipeName{
+    text-align:center;
+  }
+
+
+/* some style referenced from https://www.w3schools.com/howto/howto_js_todolist.asp */
+
+  .hide{
+    display:none;
+  }
+
+  ol li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 60px;
+    list-style-type: none;
+    background: white;
+    font-size: 60px;
+    transition: 0.2s;
+    
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  ol li:hover {
+    background: lightgray;
+  }
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+  
+.close:hover {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .addItem{
+    position:absolute;
+  }
+
+  .itemInfo{
+    margin: auto;
+    position:absolute;
+  }
+
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-top: 150px;
+  }
+
+  .stay{
+    margin: auto;
+    position:relative;
+    
+  }
+
+  .empty-list{
+    padding: 25px;
+  }
+
+  .addBtn{
+    padding: 25px;
+  }
+  
+
+  .keyboards{
+     position:absolute;
+     bottom:7px;
+     display:none;
+     border-radius: 8px;
+
+  }
+
+  .numpads{
+    position:absolute;
+    bottom:7px;
+    display:none;
+    border-radius: 8px;
+
+ }
+
+ .tabcolors:link {
+   color: #457B9D;
+ }
+
+ .tabcolors:visited {
+   color: #457B9D;
+ }
+
+ .tabcolors:hover {
+   color: #457B9D;
+ }
+
+ .tabcolors:active {
+   color: #457B9D;
+ }
+
+
